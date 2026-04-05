@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -9,579 +10,636 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --bg:    #f7f6f2;
-      --ink:   #0e0e0d;
-      --dim:   #999792;
-      --rule:  #d8d6cf;
-      --mint:  #3d9b87;
-      --mint2: rgba(61,155,135,0.08);
-      --mono:  'DM Mono', monospace;
-      --serif: 'EB Garamond', serif;
-    }
+```
+:root {
+  --bg:    #f7f6f2;
+  --ink:   #0e0e0d;
+  --dim:   #999792;
+  --rule:  #d8d6cf;
+  --mint:  #3d9b87;
+  --mint2: rgba(61,155,135,0.08);
+  --mono:  'DM Mono', monospace;
+  --serif: 'EB Garamond', serif;
+}
 
-    html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: 17px;
-      line-height: 1.65;
-    }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.65;
+}
 
-    a { color: inherit; text-decoration: none; }
+a { color: inherit; text-decoration: none; }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 50;
-      background: rgba(247,246,242,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--rule);
-      display: flex;
-      align-items: center;
-      height: 52px;
-      padding: 0 2.5rem;
-    }
+/* ── NAV ── */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background: rgba(247,246,242,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 2.5rem;
+}
 
-    .nav-brand {
-      font-family: var(--serif);
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-    }
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
 
-    .nav-brand em { font-style: italic; color: var(--mint); }
+.nav-brand em { font-style: italic; color: var(--mint); }
 
-    /* ── HERO ── */
-    .hero {
-      padding: 9rem 2.5rem 5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: end;
-      border-bottom: 1px solid var(--rule);
-      max-width: 1100px;
-      margin: 0 auto;
-      animation: up 0.7s ease both 0.05s;
-    }
+/* ── HERO ── */
+.hero {
+  padding: 9rem 2.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  border-bottom: 1px solid var(--rule);
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: up 0.7s ease both 0.05s;
+}
 
-    .hero-tag {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mint);
-      margin-bottom: 1.6rem;
-    }
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 1.6rem;
+}
 
-    .hero h1 {
-      font-weight: 400;
-      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-      line-height: 1.05;
-    }
+.hero h1 {
+  font-weight: 400;
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  line-height: 1.05;
+}
 
-    .hero h1 i { color: var(--mint); }
+.hero h1 i { color: var(--mint); }
 
-    .hero-desc {
-      font-size: 1rem;
-      color: var(--dim);
-      line-height: 1.8;
-      max-width: 400px;
-      padding-bottom: 0.4rem;
-    }
+.hero-desc {
+  font-size: 1rem;
+  color: var(--dim);
+  line-height: 1.8;
+  max-width: 400px;
+  padding-bottom: 0.4rem;
+}
 
-    .hero-scroll {
-      margin-top: 2.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--dim);
-    }
+.hero-scroll {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
 
-    .hero-scroll::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--mint);
-    }
+.hero-scroll::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--mint);
+}
 
-    /* ── TOPICS ── */
-    .topics {
-      max-width: 1100px;
-      margin: 0 auto;
-      animation: up 0.7s ease both 0.2s;
-    }
+/* ── TOPICS ── */
+.topics {
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: up 0.7s ease both 0.2s;
+}
 
-    .topic-panel { border-bottom: 1px solid var(--rule); }
+.topic-panel { border-bottom: 1px solid var(--rule); }
 
-    .topic-header {
-      display: grid;
-      grid-template-columns: 3rem 1fr auto;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 2.2rem 2.5rem;
-      cursor: pointer;
-      user-select: none;
-      transition: background 0.2s;
-    }
+.topic-header {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.2rem 2.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
 
-    .topic-header:hover { background: var(--mint2); }
+.topic-header:hover { background: var(--mint2); }
 
-    .topic-index {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      color: var(--mint);
-    }
+.topic-index {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--mint);
+}
 
-    .topic-name {
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 400;
-      line-height: 1;
-    }
+.topic-name {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1;
+}
 
-    .topic-toggle {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      color: var(--dim);
-      transition: color 0.2s;
-    }
+.topic-toggle {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+  transition: color 0.2s;
+}
 
-    .topic-panel.open .topic-toggle { color: var(--mint); }
+.topic-panel.open .topic-toggle { color: var(--mint); }
 
-    .topic-body {
-      display: none;
-      border-top: 1px solid var(--rule);
-    }
+.topic-body {
+  display: none;
+  border-top: 1px solid var(--rule);
+}
 
-    .topic-panel.open .topic-body { display: block; }
+.topic-panel.open .topic-body { display: block; }
 
-    /* intro */
-    .topic-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      padding: 2.5rem 2.5rem 2rem;
-      border-bottom: 1px solid var(--rule);
-    }
+/* intro */
+.topic-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 2.5rem 2.5rem 2rem;
+  border-bottom: 1px solid var(--rule);
+}
 
-    .topic-intro p { font-size: 0.95rem; color: var(--dim); line-height: 1.8; }
+.topic-intro p { font-size: 0.95rem; color: var(--dim); line-height: 1.8; }
 
-    .topic-quote {
-      border-left: 2px solid var(--mint);
-      padding-left: 1.4rem;
-    }
+.topic-quote {
+  border-left: 2px solid var(--mint);
+  padding-left: 1.4rem;
+}
 
-    .topic-quote blockquote {
-      font-style: italic;
-      font-size: 1.1rem;
-      line-height: 1.55;
-      margin-bottom: 0.6rem;
-    }
+.topic-quote blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  margin-bottom: 0.6rem;
+}
 
-    .topic-quote cite {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--dim);
-      font-style: normal;
-    }
+.topic-quote cite {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-style: normal;
+}
 
-    /* panel sections */
-    .panel-section { padding: 0 2.5rem 2rem; }
+/* panel sections */
+.panel-section { padding: 0 2.5rem 2rem; }
 
-    .panel-label {
-      font-family: var(--mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--dim);
-      padding: 1.8rem 0 1rem;
-      border-bottom: 1px solid var(--rule);
-    }
+.panel-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 1.8rem 0 1rem;
+  border-bottom: 1px solid var(--rule);
+}
 
-    /* text rows */
-    .text-row {
-      display: grid;
-      grid-template-columns: 2.5rem 1fr auto;
-      align-items: baseline;
-      gap: 1.2rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--rule);
-      cursor: pointer;
-      transition: color 0.2s;
-    }
+/* text rows */
+.text-row {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+  transition: color 0.2s;
+}
 
-    .text-row:last-of-type { border-bottom: none; }
-    .text-row:hover { color: var(--mint); }
-    .text-row:hover .row-tag { color: var(--mint); }
+.text-row:last-of-type { border-bottom: none; }
+.text-row:hover { color: var(--mint); }
+.text-row:hover .row-tag { color: var(--mint); }
 
-    .row-n {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      color: var(--dim);
-      padding-top: 0.15em;
-    }
+.row-n {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--dim);
+  padding-top: 0.15em;
+}
 
-    .row-title { font-size: 1.05rem; }
+.row-title { font-size: 1.05rem; }
 
-    .row-sub {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      color: var(--dim);
-      margin-top: 0.1rem;
-    }
+.row-sub {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--dim);
+  margin-top: 0.1rem;
+}
 
-    .row-tag {
-      font-family: var(--mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--dim);
-      transition: color 0.2s;
-    }
+.row-tag {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  transition: color 0.2s;
+}
 
-    /* media grid — auto-fills columns, works for any count */
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1px;
-      background: var(--rule);
-      margin-top: 1.5rem;
-    }
+/* media grid — auto-fills columns, works for any count */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  margin-top: 1.5rem;
+}
 
-    .media-cell {
-      background: var(--bg);
-      aspect-ratio: 16/10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+.media-cell {
+  background: var(--bg);
+  aspect-ratio: 16/10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
-    .media-cell:hover { background: var(--mint2); }
+.media-cell:hover { background: var(--mint2); }
 
-    /* video cell is always wider */
-    .media-cell.video {
-      grid-column: span 2;
-      aspect-ratio: 16/7;
-    }
+/* video cell is always wider */
+.media-cell.video {
+  grid-column: span 2;
+  aspect-ratio: 16/7;
+}
 
-    .media-cell svg { opacity: 0.3; }
+.media-cell svg { opacity: 0.3; }
 
-    .media-cell span {
-      font-family: var(--mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--dim);
-    }
+.media-cell span {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
 
-    /* ── FOOTER ── */
-    footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 2.5rem;
-      border-top: 1px solid var(--rule);
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 2rem;
-    }
+/* ── FOOTER ── */
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+}
 
-    .footer-names {
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--dim);
-    }
+.footer-names {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--dim);
+}
 
-    .footer-meta {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--dim);
-      text-align: right;
-      line-height: 2;
-    }
+.footer-meta {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-align: right;
+  line-height: 2;
+}
 
-    @keyframes up {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+@keyframes up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-    @media (max-width: 700px) {
-      nav { padding: 0 1.5rem; }
-      .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 2rem; }
-      .topic-header { padding: 1.8rem 1.5rem; }
-      .topic-intro { grid-template-columns: 1fr; padding: 1.5rem; }
-      .panel-section { padding: 0 1.5rem 1.5rem; }
-      .media-cell.video { grid-column: span 1; }
-      footer { flex-direction: column; gap: 1rem; }
-      .footer-meta { text-align: left; }
-    }
+@media (max-width: 700px) {
+  nav { padding: 0 1.5rem; }
+  .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 2rem; }
+  .topic-header { padding: 1.8rem 1.5rem; }
+  .topic-intro { grid-template-columns: 1fr; padding: 1.5rem; }
+  .panel-section { padding: 0 1.5rem 1.5rem; }
+  .media-cell.video { grid-column: span 1; }
+  footer { flex-direction: column; gap: 1rem; }
+  .footer-meta { text-align: left; }
+}
+```
+
   </style>
 </head>
 <body>
 
 <!-- ══ NAV ══════════════════════════════════════════════════════════ -->
+
 <nav>
   <span class="nav-brand">Staat &amp; <em>Freiheit</em></span>
 </nav>
 
 <!-- ══ HERO ═════════════════════════════════════════════════════════ -->
+
 <div class="hero">
   <div>
-    <p class="hero-tag">Philosophieprojekt · EF</p><!-- ← update Kurs here -->
+    <p class="hero-tag">Philosophieprojekt · EF</p>
     <h1>Staat<br>und <i>Freiheit</i></h1>
   </div>
   <div>
-    <p class="hero-desc">T</p>
+    <p class="hero-desc">
+      Brauchen wir den Staat, um in Freiheit zu leben – oder ist er selbst die größte
+      Bedrohung dieser Freiheit? Dieses Projekt erkundet drei zentrale Fragen der
+      politischen Philosophie: Was leistet der Anarchismus als Staatstheorie?
+      Worin unterscheiden sich negative und positive Freiheit? Und wann ist
+      Widerstand gegen staatlichen Zwang nicht nur erlaubt, sondern geboten?
+    </p>
+    <p class="hero-scroll">Themen erkunden</p>
   </div>
 </div>
 
-<!-- ══ TOPICS ════════════════════════════════════════════════════════
-  To add/remove texts:  copy or delete a .text-row block
-  To add/remove media:  copy or delete a .media-cell block
-     - use class="media-cell video" for videos (spans 2 columns)
-     - use class="media-cell"       for images (1 column)
-  To add a topic:       copy an entire .topic-panel block
-════════════════════════════════════════════════════════════════════ -->
+<!-- ══ TOPICS ════════════════════════════════════════════════════════ -->
+
 <div class="topics">
 
   <!-- TOPIC 1 -->
+
   <div class="topic-panel" id="t1">
     <div class="topic-header">
-      <span class="topic-index"></span>
+      <span class="topic-index">01</span>
       <span class="topic-name">Anarchismus</span>
       <span class="topic-toggle">Öffnen ↓</span>
     </div>
     <div class="topic-body">
       <div class="topic-intro">
-        <p>A1</p>
+        <p>
+          Der Anarchismus bestreitet die Notwendigkeit des Staates grundsätzlich.
+          Sein zentrales Argument: Menschen können ohne Herrschaft und Zwang
+          miteinander leben, wenn sie auf freiwilliger Kooperation und gegenseitiger
+          Hilfe aufbauen. Der russische Denker Peter Kropotkin entwickelte diesen
+          Gedanken zu einer umfassenden Gesellschaftstheorie – gegen den
+          Hobbes'schen Naturzustand des „Krieges aller gegen alle" setzt er
+          historische und biologische Belege für den natürlichen Kooperationstrieb
+          des Menschen. Sein Kritiker Otfried Höffe hält dagegen: Ohne eine
+          verbindliche Rechtsordnung bleibt der Schutz individueller Rechte
+          ungesichert.
+        </p>
         <div class="topic-quote">
-          <blockquote>A2</blockquote>
-          <cite>A2</cite>
+          <blockquote>
+            „Gegenseitige Hilfe ist ebenso ein Gesetz der Natur wie der gegenseitige Kampf."
+          </blockquote>
+          <cite>Peter Kropotkin · Gegenseitige Hilfe in der Tier- und Menschenwelt (1902)</cite>
         </div>
       </div>
       <div class="panel-section">
 
-        <p class="panel-label">Texte</p>
-        <div class="text-row">
-          <span class="row-n">01</span>
-          <div>
-            <div class="row-title">A3</div>
-            <div class="row-sub">A3</div>
-          </div>
-          <span class="row-tag">A3</span>
-        </div>
-        <div class="text-row">
-          <span class="row-n">02</span>
-          <div>
-            <div class="row-title">A4</div>
-            <div class="row-sub">A4</div>
-          </div>
-          <span class="row-tag">A4</span>
-        </div>
-        <div class="text-row">
-          <span class="row-n">03</span>
-          <div>
-            <div class="row-title">A5</div>
-            <div class="row-sub">A5</div>
-          </div>
-          <span class="row-tag">A5</span>
-        </div>
+```
+    <p class="panel-label">Texte</p>
+    <div class="text-row">
+      <span class="row-n">01</span>
+      <div>
+        <div class="row-title">Kropotkin – Gegenseitige Hilfe</div>
+        <div class="row-sub">Lehrbuch S. 96–97 · Kerntext Anarchismus</div>
+      </div>
+      <span class="row-tag">Primärtext</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">02</span>
+      <div>
+        <div class="row-title">Höffe – Kritik des Anarchismus</div>
+        <div class="row-sub">Lehrbuch S. 95 · Gegenposition zum Anarchismus</div>
+      </div>
+      <span class="row-tag">Sekundärtext</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">03</span>
+      <div>
+        <div class="row-title">Hobbes – Naturzustand und Leviathan</div>
+        <div class="row-sub">Hintergrundtext · Vergleich zur anarchistischen Position</div>
+      </div>
+      <span class="row-tag">Hintergrund</span>
+    </div>
 
-        <p class="panel-label">Medien</p>
-        <div class="media-grid">
-          <div class="media-cell video">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
-              <circle cx="15" cy="15" r="12"/>
-              <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
-            </svg>
-            <span>AM1</span>
-          </div>
-          <div class="media-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-            <span>AM2</span>
-          </div>
-          <div class="media-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-            <span>AM3</span>
-          </div>
-          <div class="media-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-            <span>AM4</span>
-          </div>
-        </div>
-
+    <p class="panel-label">Medien</p>
+    <div class="media-grid">
+      <div class="media-cell video">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+          <circle cx="15" cy="15" r="12"/>
+          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+        </svg>
+        <span>Erklärvideo · Was ist Anarchismus? (YouTube)</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>Karikatur · Anarchist trifft Staatsphilosoph</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>Infografik · Staatstheorien im Vergleich</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>Foto · Historische anarchistische Bewegungen</span>
       </div>
     </div>
+
+  </div>
+</div>
+```
+
   </div>
 
   <!-- TOPIC 2 -->
+
   <div class="topic-panel" id="t2">
     <div class="topic-header">
-      <span class="topic-index"></span>
+      <span class="topic-index">02</span>
       <span class="topic-name">Freiheit</span>
       <span class="topic-toggle">Öffnen ↓</span>
     </div>
     <div class="topic-body">
       <div class="topic-intro">
-        <p>F1</p>
+        <p>
+          Freiheit ist nicht gleich Freiheit. Isaiah Berlin unterschied 1958 zwei
+          grundlegend verschiedene Konzepte: Negative Freiheit meint die
+          Abwesenheit äußerer Hindernisse – ich bin frei, wenn mich niemand
+          daran hindert, etwas zu tun. Positive Freiheit hingegen fragt, wer
+          tatsächlich Herr über sein Leben ist – also ob ich auch die realen
+          Möglichkeiten und Fähigkeiten habe, meine Ziele zu verwirklichen.
+          John Stuart Mill ergänzt: Der Staat darf Freiheit nur einschränken,
+          wenn das Handeln eines Menschen anderen schadet –
+          das sogenannte Schadensprinzip.
+        </p>
         <div class="topic-quote">
-          <blockquote>F2</blockquote>
-          <cite>F2</cite>
+          <blockquote>
+            „Freiheit bedeutet, von anderen Menschen nicht daran gehindert zu werden,
+            so zu handeln, wie man möchte."
+          </blockquote>
+          <cite>Isaiah Berlin · Zwei Konzepte der Freiheit (1958)</cite>
         </div>
       </div>
       <div class="panel-section">
 
-        <p class="panel-label">Texte</p>
-        <div class="text-row">
-          <span class="row-n">01</span>
-          <div>
-            <div class="row-title">F3</div>
-            <div class="row-sub">F3</div>
-          </div>
-          <span class="row-tag">F3</span>
-        </div>
-        <div class="text-row">
-          <span class="row-n">02</span>
-          <div>
-            <div class="row-title">F4</div>
-            <div class="row-sub">F4</div>
-          </div>
-          <span class="row-tag">F4</span>
-        </div>
+```
+    <p class="panel-label">Texte</p>
+    <div class="text-row">
+      <span class="row-n">01</span>
+      <div>
+        <div class="row-title">Berlin – Negative und positive Freiheit</div>
+        <div class="row-sub">Lehrbuch S. 97–99 · Kernunterscheidung beider Freiheitsbegriffe</div>
+      </div>
+      <span class="row-tag">Primärtext</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">02</span>
+      <div>
+        <div class="row-title">Mill – Über die Freiheit (Schadensprinzip)</div>
+        <div class="row-sub">Lehrbuch S. 100 · Grenzen staatlicher Einschränkung</div>
+      </div>
+      <span class="row-tag">Primärtext</span>
+    </div>
 
-        <p class="panel-label">Medien</p>
-        <div class="media-grid">
-          <div class="media-cell video">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
-              <circle cx="15" cy="15" r="12"/>
-              <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
-            </svg>
-            <span>FM1</span>
-          </div>
-          <div class="media-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-            <span>FM2</span>
-          </div>
-          <div class="media-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-            <span>FM3</span>
-          </div>
-        </div>
-
+    <p class="panel-label">Medien</p>
+    <div class="media-grid">
+      <div class="media-cell video">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+          <circle cx="15" cy="15" r="12"/>
+          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+        </svg>
+        <span>Mini-Video · Negative vs. Positive Freiheit erklärt (60 Sek.)</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>Infografik · Freiheitsbegriffe im Überblick</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>Beispielsammlung · Freiheitseinschränkungen im Alltag</span>
       </div>
     </div>
+
+  </div>
+</div>
+```
+
   </div>
 
   <!-- TOPIC 3 -->
+
   <div class="topic-panel" id="t3">
     <div class="topic-header">
-      <span class="topic-index"></span>
+      <span class="topic-index">03</span>
       <span class="topic-name">Zwang und Widerstand</span>
       <span class="topic-toggle">Öffnen ↓</span>
     </div>
     <div class="topic-body">
       <div class="topic-intro">
-        <p>Z1</p>
+        <p>
+          Jeder Staat beruht auf Zwang – aber wann wird dieser Zwang illegitim?
+          Hans Kelsen definierte den Staat als Zwangsordnung: Recht ist nur
+          deshalb wirksam, weil es im Notfall mit Gewalt durchgesetzt werden kann.
+          Doch was passiert, wenn Gesetze selbst zum Unrecht werden? Die
+          Radbruch-Formel antwortet: Extremes gesetzliches Unrecht verliert seinen
+          Rechtscharakter. Die Weiße Rose handelte nach diesem Prinzip.
+          Jürgen Habermas unterscheidet zivillen Ungehorsam von Revolution:
+          Ersterer appelliert öffentlich und gewaltfrei an das Gerechtigkeitsgefühl
+          der Mehrheit – wie heute Klimaaktivisten oder iranische Protestbewegungen.
+        </p>
         <div class="topic-quote">
-          <blockquote>Z2</blockquote>
-          <cite>Z2</cite>
+          <blockquote>
+            „Gesetzliches Unrecht und übergesetzliches Recht – der Konflikt zwischen
+            Gerechtigkeit und Rechtssicherheit ist so zu lösen: Das Recht muss dem
+            Gerechten weichen."
+          </blockquote>
+          <cite>Gustav Radbruch · Gesetzliches Unrecht und übergesetzliches Recht (1946)</cite>
         </div>
       </div>
       <div class="panel-section">
 
-        <p class="panel-label">Texte</p>
-        <div class="text-row">
-          <span class="row-n">01</span>
-          <div>
-            <div class="row-title">Z3</div>
-            <div class="row-sub">Z3</div>
-          </div>
-          <span class="row-tag">Z3</span>
-        </div>
-        <div class="text-row">
-          <span class="row-n">02</span>
-          <div>
-            <div class="row-title">Z4</div>
-            <div class="row-sub">Z4</div>
-          </div>
-          <span class="row-tag">Z4</span>
-        </div>
-        <div class="text-row">
-          <span class="row-n">03</span>
-          <div>
-            <div class="row-title">Z5</div>
-            <div class="row-sub">Z5</div>
-          </div>
-          <span class="row-tag">Z5</span>
-        </div>
+```
+    <p class="panel-label">Texte</p>
+    <div class="text-row">
+      <span class="row-n">01</span>
+      <div>
+        <div class="row-title">Kelsen – Staat als Zwangsordnung</div>
+        <div class="row-sub">Lehrbuch S. 102–103 · Rechtspositivismus und staatlicher Zwang</div>
+      </div>
+      <span class="row-tag">Primärtext</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">02</span>
+      <div>
+        <div class="row-title">Radbruch-Formel – Gesetzliches Unrecht</div>
+        <div class="row-sub">Lehrbuch S. 110 · Grenzen des Rechtsgehorsams</div>
+      </div>
+      <span class="row-tag">Primärtext</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">03</span>
+      <div>
+        <div class="row-title">Habermas – Ziviler Ungehorsam</div>
+        <div class="row-sub">Lehrbuch S. 112–113 · Widerstand in der Demokratie</div>
+      </div>
+      <span class="row-tag">Primärtext</span>
+    </div>
 
-        <p class="panel-label">Medien</p>
-        <div class="media-grid">
-          <div class="media-cell video">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
-              <circle cx="15" cy="15" r="12"/>
-              <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
-            </svg>
-            <span>ZM1</span>
-          </div>
-          <div class="media-cell video">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
-              <circle cx="15" cy="15" r="12"/>
-              <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
-            </svg>
-            <span>ZM2</span>
-          </div>
-          <div class="media-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-            <span>ZM3</span>
-          </div>
-          <div class="media-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-            <span>ZM4</span>
-          </div>
-          <div class="media-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-            <span>ZM5</span>
-          </div>
-        </div>
-
+    <p class="panel-label">Medien</p>
+    <div class="media-grid">
+      <div class="media-cell video">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+          <circle cx="15" cy="15" r="12"/>
+          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+        </svg>
+        <span>Dokumentation · Die Weiße Rose – Geschichte und Widerstand</span>
+      </div>
+      <div class="media-cell video">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+          <circle cx="15" cy="15" r="12"/>
+          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+        </svg>
+        <span>Reportage · Ziviler Ungehorsam heute – Iran und Klimaproteste</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>Infografik · Radbruch-Formel erklärt</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>Foto · Flugblätter der Weißen Rose</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>Schaubild · Ziviler Ungehorsam vs. Revolution</span>
       </div>
     </div>
+
+  </div>
+</div>
+```
+
   </div>
 
 </div>
 
-<!-- ══ FOOTER ════════════════════════════════════════════════════════
-  Add or remove names by editing the comma-separated list below.
-════════════════════════════════════════════════════════════════════ -->
+<!-- ══ FOOTER ════════════════════════════════════════════════════════ -->
+
 <footer>
   <span class="footer-names">
-    Lars R., Milo, Shabnam, Zehra, Lennard
-    Erstellt als Kreatives produkt für unsere scrum Arbeiten.
+    Lars R., Milo, Shabnam, Zehra, Lennard —
+    Erstellt als kreatives Produkt für unsere Scrum-Arbeit.
   </span>
   <div class="footer-meta">
     Philosophie · EF<br>
     Inda-Gymnasium · 2026
   </div>
-  <a href="oldIndex.html">Altes design</a>
-
+  <a href="oldIndex.html">Altes Design</a>
 </footer>
 
 <script>
