@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="de">
+<!DOCTYPE html><html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +8,6 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-```
 :root {
   --bg:    #f7f6f2;
   --ink:   #0e0e0d;
@@ -334,97 +331,66 @@ footer {
   footer { flex-direction: column; gap: 1rem; }
   .footer-meta { text-align: left; }
 }
-```
 
-  </style>
+
+</style>
 </head>
-<body>
-
-<!-- ══ NAV ══════════════════════════════════════════════════════════ -->
-
-<nav>
+<body><!-- ══ NAV ══════════════════════════════════════════════════════════ --><nav>
   <span class="nav-brand">Staat &amp; <em>Freiheit</em></span>
-</nav>
-
-<!-- ══ HERO ═════════════════════════════════════════════════════════ -->
-
-<div class="hero">
+</nav><!-- ══ HERO ═════════════════════════════════════════════════════════ --><div class="hero">
   <div>
-    <p class="hero-tag">Philosophieprojekt · EF</p>
+    <p class="hero-tag">Philosophieprojekt · EF</p><!-- ← update Kurs here -->
     <h1>Staat<br>und <i>Freiheit</i></h1>
   </div>
   <div>
-    <p class="hero-desc">
-      Brauchen wir den Staat, um in Freiheit zu leben – oder ist er selbst die größte
-      Bedrohung dieser Freiheit? Dieses Projekt erkundet drei zentrale Fragen der
-      politischen Philosophie: Was leistet der Anarchismus als Staatstheorie?
-      Worin unterscheiden sich negative und positive Freiheit? Und wann ist
-      Widerstand gegen staatlichen Zwang nicht nur erlaubt, sondern geboten?
-    </p>
-    <p class="hero-scroll">Themen erkunden</p>
+    <p class="hero-desc">T</p>
   </div>
-</div>
-
-<!-- ══ TOPICS ════════════════════════════════════════════════════════ -->
-
-<div class="topics">
-
-  <!-- TOPIC 1 -->
-
-  <div class="topic-panel" id="t1">
+</div><!-- ══ TOPICS ════════════════════════════════════════════════════════
+  To add/remove texts:  copy or delete a .text-row block
+  To add/remove media:  copy or delete a .media-cell block
+     - use class="media-cell video" for videos (spans 2 columns)
+     - use class="media-cell"       for images (1 column)
+  To add a topic:       copy an entire .topic-panel block
+════════════════════════════════════════════════════════════════════ --><div class="topics"><!-- TOPIC 1 --><div class="topic-panel" id="t1">
     <div class="topic-header">
-      <span class="topic-index">01</span>
+      <span class="topic-index"></span>
       <span class="topic-name">Anarchismus</span>
       <span class="topic-toggle">Öffnen ↓</span>
     </div>
     <div class="topic-body">
       <div class="topic-intro">
-        <p>
-          Der Anarchismus bestreitet die Notwendigkeit des Staates grundsätzlich.
-          Sein zentrales Argument: Menschen können ohne Herrschaft und Zwang
-          miteinander leben, wenn sie auf freiwilliger Kooperation und gegenseitiger
-          Hilfe aufbauen. Der russische Denker Peter Kropotkin entwickelte diesen
-          Gedanken zu einer umfassenden Gesellschaftstheorie – gegen den
-          Hobbes'schen Naturzustand des „Krieges aller gegen alle" setzt er
-          historische und biologische Belege für den natürlichen Kooperationstrieb
-          des Menschen. Sein Kritiker Otfried Höffe hält dagegen: Ohne eine
-          verbindliche Rechtsordnung bleibt der Schutz individueller Rechte
-          ungesichert.
-        </p>
+        <p>A1</p>
         <div class="topic-quote">
-          <blockquote>
-            „Gegenseitige Hilfe ist ebenso ein Gesetz der Natur wie der gegenseitige Kampf."
-          </blockquote>
-          <cite>Peter Kropotkin · Gegenseitige Hilfe in der Tier- und Menschenwelt (1902)</cite>
+          <blockquote>A2</blockquote>
+          <cite>A2</cite>
         </div>
       </div>
       <div class="panel-section">
 
-```
     <p class="panel-label">Texte</p>
     <div class="text-row">
       <span class="row-n">01</span>
       <div>
-        <div class="row-title">Kropotkin – Gegenseitige Hilfe</div>
-        <div class="row-sub">Lehrbuch S. 96–97 · Kerntext Anarchismus</div>
+        <div class="row-title">A3</div>
+        <div class="row-sub">A3</div>
       </div>
-      <span class="row-tag">Primärtext</span>
+      <span class="row-tag">A3</span>
     </div>
     <div class="text-row">
       <span class="row-n">02</span>
       <div>
-        <div class="row-title">Höffe – Kritik des Anarchismus</div>
-        <div class="row-sub">Lehrbuch S. 95 · Gegenposition zum Anarchismus</div>
+        <div class="row-title">A4</div>
+        <div class="row-sub">A4</div>
       </div>
-      <span class="row-tag">Sekundärtext</span>
+      <span class="row-tag">A4</span>
     </div>
     <div class="text-row">
       <span class="row-n">03</span>
       <div>
-        <div class="row-title">Hobbes – Naturzustand und Leviathan</div>
-        <div class="row-sub">Hintergrundtext · Vergleich zur anarchistischen Position</div>
+        <div class="row-title">A5</div>
+        <div class="row-sub">A5</div>
       </div>
-      <span class="row-tag">Hintergrund</span>
+      <span class="row-tag">A5</span>
     </div>
 
     <p class="panel-label">Medien</p>
@@ -434,76 +400,58 @@ footer {
           <circle cx="15" cy="15" r="12"/>
           <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
         </svg>
-        <span>Erklärvideo · Was ist Anarchismus? (YouTube)</span>
+        <span>AM1</span>
       </div>
       <div class="media-cell">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Karikatur · Anarchist trifft Staatsphilosoph</span>
+        <span>AM2</span>
       </div>
       <div class="media-cell">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Infografik · Staatstheorien im Vergleich</span>
+        <span>AM3</span>
       </div>
       <div class="media-cell">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Foto · Historische anarchistische Bewegungen</span>
+        <span>AM4</span>
       </div>
     </div>
 
   </div>
 </div>
-```
 
-  </div>
 
-  <!-- TOPIC 2 -->
-
-  <div class="topic-panel" id="t2">
+</div><!-- TOPIC 2 --><div class="topic-panel" id="t2">
     <div class="topic-header">
-      <span class="topic-index">02</span>
+      <span class="topic-index"></span>
       <span class="topic-name">Freiheit</span>
       <span class="topic-toggle">Öffnen ↓</span>
     </div>
     <div class="topic-body">
       <div class="topic-intro">
-        <p>
-          Freiheit ist nicht gleich Freiheit. Isaiah Berlin unterschied 1958 zwei
-          grundlegend verschiedene Konzepte: Negative Freiheit meint die
-          Abwesenheit äußerer Hindernisse – ich bin frei, wenn mich niemand
-          daran hindert, etwas zu tun. Positive Freiheit hingegen fragt, wer
-          tatsächlich Herr über sein Leben ist – also ob ich auch die realen
-          Möglichkeiten und Fähigkeiten habe, meine Ziele zu verwirklichen.
-          John Stuart Mill ergänzt: Der Staat darf Freiheit nur einschränken,
-          wenn das Handeln eines Menschen anderen schadet –
-          das sogenannte Schadensprinzip.
-        </p>
+        <p>F1</p>
         <div class="topic-quote">
-          <blockquote>
-            „Freiheit bedeutet, von anderen Menschen nicht daran gehindert zu werden,
-            so zu handeln, wie man möchte."
-          </blockquote>
-          <cite>Isaiah Berlin · Zwei Konzepte der Freiheit (1958)</cite>
+          <blockquote>F2</blockquote>
+          <cite>F2</cite>
         </div>
       </div>
       <div class="panel-section">
 
-```
     <p class="panel-label">Texte</p>
     <div class="text-row">
       <span class="row-n">01</span>
       <div>
-        <div class="row-title">Berlin – Negative und positive Freiheit</div>
-        <div class="row-sub">Lehrbuch S. 97–99 · Kernunterscheidung beider Freiheitsbegriffe</div>
+        <div class="row-title">F3</div>
+        <div class="row-sub">F3</div>
       </div>
-      <span class="row-tag">Primärtext</span>
+      <span class="row-tag">F3</span>
     </div>
     <div class="text-row">
       <span class="row-n">02</span>
       <div>
-        <div class="row-title">Mill – Über die Freiheit (Schadensprinzip)</div>
-        <div class="row-sub">Lehrbuch S. 100 · Grenzen staatlicher Einschränkung</div>
+        <div class="row-title">F4</div>
+        <div class="row-sub">F4</div>
       </div>
-      <span class="row-tag">Primärtext</span>
+      <span class="row-tag">F4</span>
     </div>
 
     <p class="panel-label">Medien</p>
@@ -513,81 +461,62 @@ footer {
           <circle cx="15" cy="15" r="12"/>
           <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
         </svg>
-        <span>Mini-Video · Negative vs. Positive Freiheit erklärt (60 Sek.)</span>
+        <span>FM1</span>
       </div>
       <div class="media-cell">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Infografik · Freiheitsbegriffe im Überblick</span>
+        <span>FM2</span>
       </div>
       <div class="media-cell">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Beispielsammlung · Freiheitseinschränkungen im Alltag</span>
+        <span>FM3</span>
       </div>
     </div>
 
   </div>
 </div>
-```
 
-  </div>
 
-  <!-- TOPIC 3 -->
-
-  <div class="topic-panel" id="t3">
+</div><!-- TOPIC 3 --><div class="topic-panel" id="t3">
     <div class="topic-header">
-      <span class="topic-index">03</span>
+      <span class="topic-index"></span>
       <span class="topic-name">Zwang und Widerstand</span>
       <span class="topic-toggle">Öffnen ↓</span>
     </div>
     <div class="topic-body">
       <div class="topic-intro">
-        <p>
-          Jeder Staat beruht auf Zwang – aber wann wird dieser Zwang illegitim?
-          Hans Kelsen definierte den Staat als Zwangsordnung: Recht ist nur
-          deshalb wirksam, weil es im Notfall mit Gewalt durchgesetzt werden kann.
-          Doch was passiert, wenn Gesetze selbst zum Unrecht werden? Die
-          Radbruch-Formel antwortet: Extremes gesetzliches Unrecht verliert seinen
-          Rechtscharakter. Die Weiße Rose handelte nach diesem Prinzip.
-          Jürgen Habermas unterscheidet zivillen Ungehorsam von Revolution:
-          Ersterer appelliert öffentlich und gewaltfrei an das Gerechtigkeitsgefühl
-          der Mehrheit – wie heute Klimaaktivisten oder iranische Protestbewegungen.
-        </p>
+        <p>Z1</p>
         <div class="topic-quote">
-          <blockquote>
-            „Gesetzliches Unrecht und übergesetzliches Recht – der Konflikt zwischen
-            Gerechtigkeit und Rechtssicherheit ist so zu lösen: Das Recht muss dem
-            Gerechten weichen."
-          </blockquote>
-          <cite>Gustav Radbruch · Gesetzliches Unrecht und übergesetzliches Recht (1946)</cite>
+          <blockquote>Z2</blockquote>
+          <cite>Z2</cite>
         </div>
       </div>
       <div class="panel-section">
 
-```
     <p class="panel-label">Texte</p>
     <div class="text-row">
       <span class="row-n">01</span>
       <div>
-        <div class="row-title">Kelsen – Staat als Zwangsordnung</div>
-        <div class="row-sub">Lehrbuch S. 102–103 · Rechtspositivismus und staatlicher Zwang</div>
+        <div class="row-title">Z3</div>
+        <div class="row-sub">Z3</div>
       </div>
-      <span class="row-tag">Primärtext</span>
+      <span class="row-tag">Z3</span>
     </div>
     <div class="text-row">
       <span class="row-n">02</span>
       <div>
-        <div class="row-title">Radbruch-Formel – Gesetzliches Unrecht</div>
-        <div class="row-sub">Lehrbuch S. 110 · Grenzen des Rechtsgehorsams</div>
+        <div class="row-title">Z4</div>
+        <div class="row-sub">Z4</div>
       </div>
-      <span class="row-tag">Primärtext</span>
+      <span class="row-tag">Z4</span>
     </div>
     <div class="text-row">
       <span class="row-n">03</span>
       <div>
-        <div class="row-title">Habermas – Ziviler Ungehorsam</div>
-        <div class="row-sub">Lehrbuch S. 112–113 · Widerstand in der Demokratie</div>
+        <div class="row-title">Z5</div>
+        <div class="row-sub">Z5</div>
       </div>
-      <span class="row-tag">Primärtext</span>
+      <span class="row-tag">Z5</span>
     </div>
 
     <p class="panel-label">Medien</p>
@@ -597,52 +526,45 @@ footer {
           <circle cx="15" cy="15" r="12"/>
           <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
         </svg>
-        <span>Dokumentation · Die Weiße Rose – Geschichte und Widerstand</span>
+        <span>ZM1</span>
       </div>
       <div class="media-cell video">
         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
           <circle cx="15" cy="15" r="12"/>
           <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
         </svg>
-        <span>Reportage · Ziviler Ungehorsam heute – Iran und Klimaproteste</span>
+        <span>ZM2</span>
       </div>
       <div class="media-cell">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Infografik · Radbruch-Formel erklärt</span>
+        <span>ZM3</span>
       </div>
       <div class="media-cell">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Foto · Flugblätter der Weißen Rose</span>
+        <span>ZM4</span>
       </div>
       <div class="media-cell">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Schaubild · Ziviler Ungehorsam vs. Revolution</span>
+        <span>ZM5</span>
       </div>
     </div>
 
   </div>
 </div>
-```
 
-  </div>
 
-</div>
-
-<!-- ══ FOOTER ════════════════════════════════════════════════════════ -->
-
-<footer>
+</div></div><!-- ══ FOOTER ════════════════════════════════════════════════════════
+  Add or remove names by editing the comma-separated list below.
+════════════════════════════════════════════════════════════════════ --><footer>
   <span class="footer-names">
-    Lars R., Milo, Shabnam, Zehra, Lennard —
-    Erstellt als kreatives Produkt für unsere Scrum-Arbeit.
+    Lars R., Milo, Shabnam, Zehra, Lennard
+    Erstellt als Kreatives produkt für unsere scrum Arbeiten.
   </span>
   <div class="footer-meta">
     Philosophie · EF<br>
     Inda-Gymnasium · 2026
   </div>
-  <a href="oldIndex.html">Altes Design</a>
-</footer>
-
-<script>
+  <a href="oldIndex.html">Altes design</a></footer><script>
   document.querySelectorAll('.topic-header').forEach(header => {
     header.addEventListener('click', () => {
       const panel = header.closest('.topic-panel');
@@ -660,7 +582,5 @@ footer {
       }
     });
   });
-</script>
-
-</body>
+</script></body>
 </html>
