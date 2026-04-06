@@ -1,74 +1,604 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html><html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staat & Freiheit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<html>
-	<head>
-		<title>Politik Philosophische Untersuchung</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+:root {
+  --bg:    #f7f6f2;
+  --ink:   #0e0e0d;
+  --dim:   #999792;
+  --rule:  #d8d6cf;
+  --mint:  #3d9b87;
+  --mint2: rgba(61,155,135,0.08);
+  --mono:  'DM Mono', monospace;
+  --serif: 'EB Garamond', serif;
+}
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+html { scroll-behavior: smooth; }
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/MiloFace.JPG" alt="" /></span><span class="title">Staat und Freiheit</span>
-								</a>
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.65;
+}
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+a { color: inherit; text-decoration: none; }
 
-						</div>
-					</header>
+/* ── NAV ── */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background: rgba(247,246,242,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 2.5rem;
+}
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Start</a></li>
-							<li><a href="generic.html">Anarchismus</a></li>
-							<li><a href="generic.html">Freiheit</a></li>
-							<li><a href="generic.html">Zwang und Widerstand</a></li>
-							<li><a href="elements.html">Infos</a></li>
-						</ul>
-					</nav>
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Webseiten Infos</h1>
-							<span class="image main"><img src="images/MiloFace.JPG" alt="" /></span>
-							<p>Diese Webseite wird genutzt um die gesammelten ergebnisse aus unserer 6 wöchigen Arbeitsphase im Stil des Eduscrums übersichtlich vorzustellen.</p>
-							<p>Die Gegebenen inhalte wurden von allen gruppenmitgliedern Lars, Zehra, Shabi, Lennard und Milo aus den EF G2 Philosophie Kurs von Herr Tambornino erarbeitet. Diese seite wurde von Milo(mir (´꒳`)♡) gecodet und Analog vordesigned.</p>
-							<p>Genauere angaben zu den einzelnen arbeitsschritten finden sie <a href="arbeitsvorgang.html">hier</a>. </p>
-							
-						</div>
-					</div>
+.nav-brand em { font-style: italic; color: var(--mint); }
 
-				<!-- Footer -->
-					<footer id="footer">
-						
-					</footer>
+/* ── HERO ── */
+.hero {
+  padding: 9rem 2.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  border-bottom: 1px solid var(--rule);
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: up 0.7s ease both 0.05s;
+}
 
-			</div>
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 1.6rem;
+}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+.hero h1 {
+  font-weight: 400;
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  line-height: 1.05;
+}
 
-	</body>
+.hero h1 i { color: var(--mint); }
 
+.hero-desc {
+  font-size: 1rem;
+  color: var(--dim);
+  line-height: 1.8;
+  max-width: 400px;
+  padding-bottom: 0.4rem;
+}
+
+.hero-scroll {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.hero-scroll::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--mint);
+}
+
+/* ── TOPICS ── */
+.topics {
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: up 0.7s ease both 0.2s;
+}
+
+.topic-panel { border-bottom: 1px solid var(--rule); }
+
+.topic-header {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.2rem 2.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.topic-header:hover { background: var(--mint2); }
+
+.topic-index {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--mint);
+}
+
+.topic-name {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.topic-toggle {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+  transition: color 0.2s;
+}
+
+.topic-panel.open .topic-toggle { color: var(--mint); }
+
+.topic-body {
+  display: none;
+  border-top: 1px solid var(--rule);
+}
+
+.topic-panel.open .topic-body { display: block; }
+
+/* intro */
+.topic-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 2.5rem 2.5rem 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.topic-intro p { font-size: 0.95rem; color: var(--dim); line-height: 1.8; }
+
+.topic-quote {
+  border-left: 2px solid var(--mint);
+  padding-left: 1.4rem;
+}
+
+.topic-quote blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  margin-bottom: 0.6rem;
+}
+
+.topic-quote cite {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-style: normal;
+}
+
+/* panel sections */
+.panel-section { padding: 0 2.5rem 2rem; }
+
+.panel-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 1.8rem 0 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* text rows */
+.text-row {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.text-row:last-of-type { border-bottom: none; }
+.text-row:hover { color: var(--mint); }
+.text-row:hover .row-tag { color: var(--mint); }
+
+.row-n {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--dim);
+  padding-top: 0.15em;
+}
+
+.row-title { font-size: 1.05rem; }
+
+.row-sub {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--dim);
+  margin-top: 0.1rem;
+}
+
+.row-tag {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  transition: color 0.2s;
+}
+
+/* media grid — auto-fills columns, works for any count */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  margin-top: 1.5rem;
+}
+
+.media-cell {
+  background: var(--bg);
+  aspect-ratio: 16/10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.media-cell:hover { background: var(--mint2); }
+
+/* video cell is always wider */
+.media-cell.video {
+  grid-column: span 2;
+  aspect-ratio: 16/7;
+}
+
+.media-cell svg { opacity: 0.3; }
+
+.media-cell span {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* ── FOOTER ── */
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-names {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--dim);
+}
+
+.footer-meta {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-align: right;
+  line-height: 2;
+}
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  nav { padding: 0 1.5rem; }
+  .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 2rem; }
+  .topic-header { padding: 1.8rem 1.5rem; }
+  .topic-intro { grid-template-columns: 1fr; padding: 1.5rem; }
+  .panel-section { padding: 0 1.5rem 1.5rem; }
+  .media-cell.video { grid-column: span 1; }
+  footer { flex-direction: column; gap: 1rem; }
+  .footer-meta { text-align: left; }
+}
+
+
+</style>
+</head>
+<body><!-- ══ NAV ══════════════════════════════════════════════════════════ --><nav>
+  <span class="nav-brand">Staat &amp; <em>Freiheit</em></span>
+</nav><!-- ══ HERO ═════════════════════════════════════════════════════════ --><div class="hero">
+  <div>
+    <p class="hero-tag">Philosophieprojekt · EF</p><!-- ← update Kurs here -->
+    <h1>Staat<br>und <i>Freiheit</i></h1>
+  </div>
+  <div>
+    <p class="hero-desc">Brauchen wir den Staat, um in Freiheit zu leben – oder ist er selbst die größte
+  Bedrohung dieser Freiheit? Dieses Projekt erkundet drei zentrale Fragen der
+  politischen Philosophie: Was leistet der Anarchismus als Staatstheorie?
+  Worin unterscheiden sich negative und positive Freiheit? Und wann ist
+  Widerstand gegen staatlichen Zwang nicht nur erlaubt, sondern geboten?
+   </p>
+  </div>
+</div><!-- ══ TOPICS ════════════════════════════════════════════════════════
+  To add/remove texts:  copy or delete a .text-row block
+  To add/remove media:  copy or delete a .media-cell block
+     - use class="media-cell video" for videos (spans 2 columns)
+     - use class="media-cell"       for images (1 column)
+  To add a topic:       copy an entire .topic-panel block
+════════════════════════════════════════════════════════════════════ --><div class="topics"><!-- TOPIC 1 --><div class="topic-panel" id="t1">
+    <div class="topic-header">
+      <span class="topic-index"></span>
+      <span class="topic-name">Anarchismus</span>
+      <span class="topic-toggle">Öffnen ↓</span>
+    </div>
+    <div class="topic-body">
+      <div class="topic-intro">
+        <p>Der Anarchismus bestreitet die Notwendigkeit des Staates grundsätzlich.
+						Menschen können ohne Herrschaft und Zwang miteinander leben, wenn sie auf
+						freiwilliger Kooperation und gegenseitiger Hilfe aufbauen. Peter Kropotkin
+						entwickelte diesen Gedanken gegen den Hobbes'schen Naturzustand – Höffe
+						hält dagegen: Ohne Rechtsordnung bleibt der Schutz individueller Rechte
+						ungesichert.</p>
+        <div class="topic-quote">
+         	<blockquote>„Gegenseitige Hilfe ist ebenso ein Gesetz der Natur wie der gegenseitige Kampf."</blockquote>
+					<cite>Peter Kropotkin · Gegenseitige Hilfe in der Tier- und Menschenwelt (1902)</cite>
+        </div>
+      </div>
+      <div class="panel-section">
+
+    <p class="panel-label">Texte</p>
+    <div class="text-row">
+      <span class="row-n">01</span>
+      <div>
+        <div class="row-title">A3</div>
+        <div class="row-sub">A3</div>
+      </div>
+      <span class="row-tag">A3</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">02</span>
+      <div>
+        <div class="row-title">A4</div>
+        <div class="row-sub">A4</div>
+      </div>
+      <span class="row-tag">A4</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">03</span>
+      <div>
+        <div class="row-title">A5</div>
+        <div class="row-sub">A5</div>
+      </div>
+      <span class="row-tag">A5</span>
+    </div>
+
+    <p class="panel-label">Medien</p>
+    <div class="media-grid">
+      <div class="media-cell video">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+          <circle cx="15" cy="15" r="12"/>
+          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+        </svg>
+        <span>AM1</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>AM2</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>AM3</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>AM4</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div><!-- TOPIC 2 --><div class="topic-panel" id="t2">
+    <div class="topic-header">
+      <span class="topic-index"></span>
+      <span class="topic-name">Freiheit</span>
+      <span class="topic-toggle">Öffnen ↓</span>
+    </div>
+    <div class="topic-body">
+      <div class="topic-intro">
+        <p>Freiheit ist nicht gleich Freiheit. Isaiah Berlin unterschied 1958 zwei
+						grundlegend verschiedene Konzepte: Negative Freiheit meint die Abwesenheit
+						äußerer Hindernisse. Positive Freiheit fragt, wer tatsächlich Herr über sein
+						Leben ist. John Stuart Mill ergänzt: Der Staat darf Freiheit nur einschränken,
+						wenn das Handeln eines Menschen anderen schadet – das Schadensprinzip.</p>
+        <div class="topic-quote">
+          <blockquote>„Freiheit bedeutet, von anderen Menschen nicht daran gehindert zu werden, so zu handeln, wie man möchte."</blockquote>
+					 <cite>Isaiah Berlin · Zwei Konzepte der Freiheit (1958)</cite>
+        </div>
+      </div>
+      <div class="panel-section">
+
+    <p class="panel-label">Texte</p>
+    <div class="text-row">
+      <span class="row-n">01</span>
+      <div>
+        <div class="row-title">F3</div>
+        <div class="row-sub">F3</div>
+      </div>
+      <span class="row-tag">F3</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">02</span>
+      <div>
+        <div class="row-title">F4</div>
+        <div class="row-sub">F4</div>
+      </div>
+      <span class="row-tag">F4</span>
+    </div>
+
+    <p class="panel-label">Medien</p>
+    <div class="media-grid">
+      <div class="media-cell video">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+          <circle cx="15" cy="15" r="12"/>
+          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+        </svg>
+        <span>FM1</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>FM2</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>FM3</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div><!-- TOPIC 3 --><div class="topic-panel" id="t3">
+    <div class="topic-header">
+      <span class="topic-index"></span>
+      <span class="topic-name">Zwang und Widerstand</span>
+      <span class="topic-toggle">Öffnen ↓</span>
+    </div>
+    <div class="topic-body">
+      <div class="topic-intro">
+        <p>Jeder Staat beruht auf Zwang – aber wann wird dieser Zwang illegitim?
+						Kelsen definiert den Staat als Zwangsordnung. Die Radbruch-Formel antwortet:
+						Extremes gesetzliches Unrecht verliert seinen Rechtscharakter – die Weiße Rose
+						handelte danach. Habermas unterscheidet zivillen Ungehorsam von Revolution:
+						Er appelliert öffentlich und gewaltfrei an das Gerechtigkeitsgefühl der Mehrheit.</p>
+        <div class="topic-quote">
+          <blockquote>„Das Recht muss dem Gerechten weichen, wenn der Widerspruch des positiven Gesetzes zur Gerechtigkeit ein unerträgliches Maß erreicht."</blockquote>
+					 <cite>Gustav Radbruch · Gesetzliches Unrecht und übergesetzliches Recht (1946)</cite>
+        </div>
+      </div>
+      <div class="panel-section">
+
+    <p class="panel-label">Texte</p>
+    <div class="text-row" onclick="window.open('https://www.bpb.de/themen/politische-bildung/lexikon/49945/anarchismus/', '_blank')">
+      <span class="row-n">01</span>
+      <div>
+        <div class="row-title">Z3 linked</div>
+        <div class="row-sub">Z3</div>
+      </div>
+      <span class="row-tag">Z3</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">02</span>
+      <div>
+        <div class="row-title">Z4</div>
+        <div class="row-sub">Z4</div>
+      </div>
+      <span class="row-tag">Z4</span>
+    </div>
+    <div class="text-row">
+      <span class="row-n">03</span>
+      <div>
+        <div class="row-title">Z5</div>
+        <div class="row-sub">Z5</div>
+      </div>
+      <span class="row-tag">Z5</span>
+    </div>
+
+    <p class="panel-label">Medien</p>
+    <div class="media-grid">
+      <div class="media-cell video">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+          <circle cx="15" cy="15" r="12"/>
+          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+        </svg>
+        <span>ZM1</span>
+      </div>
+      <div class="media-cell video">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+          <circle cx="15" cy="15" r="12"/>
+          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+        </svg>
+        <span>ZM2</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>ZM3</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>ZM4</span>
+      </div>
+      <div class="media-cell">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+        <span>ZM5</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div></div><!-- ══ FOOTER ════════════════════════════════════════════════════════
+  Add or remove names by editing the comma-separated list below.
+════════════════════════════════════════════════════════════════════ --><footer>
+  <span class="footer-names">
+    Lars R., Milo, Shabnam, Zehra, Lennard
+    Erstellt als Kreatives produkt für unsere scrum Arbeiten.
+  </span>
+  <div class="footer-meta">
+    Philosophie · EF<br>
+    Inda-Gymnasium · 2026
+  </div>
+  <a href="oldIndex.html">Altes design</a></footer><script>
+  document.querySelectorAll('.topic-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const panel = header.closest('.topic-panel');
+      const isOpen = panel.classList.contains('open');
+
+      document.querySelectorAll('.topic-panel').forEach(p => {
+        p.classList.remove('open');
+        p.querySelector('.topic-toggle').textContent = 'Öffnen ↓';
+      });
+
+      if (!isOpen) {
+        panel.classList.add('open');
+        header.querySelector('.topic-toggle').textContent = 'Schließen ↑';
+        setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 10);
+      }
+    });
+  });
+</script></body>
 </html>
