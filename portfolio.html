@@ -1,337 +1,359 @@
-<!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE html><html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio · Staat & Freiheit</title>
+  <title>Staat & Freiheit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --bg:    #f7f6f2;
-      --ink:   #0e0e0d;
-      --dim:   #999792;
-      --rule:  #d8d6cf;
-      --mint:  #3d9b87;
-      --mint2: rgba(61,155,135,0.08);
-      --mono:  'DM Mono', monospace;
-      --serif: 'EB Garamond', serif;
-    }
+:root {
+  --bg:    #f7f6f2;
+  --ink:   #0e0e0d;
+  --dim:   #999792;
+  --rule:  #d8d6cf;
+  --mint:  #3d9b87;
+  --mint2: rgba(61,155,135,0.08);
+  --mono:  'DM Mono', monospace;
+  --serif: 'EB Garamond', serif;
+}
 
-    html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: 17px;
-      line-height: 1.65;
-    }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.65;
+}
 
-    a { color: inherit; text-decoration: none; }
+a { color: inherit; text-decoration: none; }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 50;
-      background: rgba(247,246,242,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--rule);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 52px;
-      padding: 0 2.5rem;
-    }
+/* ── NAV ── */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background: rgba(247,246,242,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 2.5rem;
+}
 
-    .nav-brand { font-family: var(--serif); font-size: 0.95rem; letter-spacing: 0.02em; }
-    .nav-brand em { font-style: italic; color: var(--mint); }
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
 
-    .nav-back {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--dim);
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: var(--mint); }
+.nav-brand em { font-style: italic; color: var(--mint); }
 
-    /* ── HERO ── */
-    .hero {
-      padding: 9rem 2.5rem 5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: end;
-      border-bottom: 1px solid var(--rule);
-      max-width: 1100px;
-      margin: 0 auto;
-      animation: up 0.7s ease both 0.05s;
-    }
+/* ── HERO ── */
+.hero {
+  padding: 9rem 2.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  border-bottom: 1px solid var(--rule);
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: up 0.7s ease both 0.05s;
+}
 
-    .hero-tag {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mint);
-      margin-bottom: 1.6rem;
-    }
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 1.6rem;
+}
 
-    .hero h1 {
-      font-weight: 400;
-      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-      line-height: 1.05;
-    }
+.hero h1 {
+  font-weight: 400;
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  line-height: 1.05;
+}
 
-    .hero h1 i { color: var(--mint); }
+.hero h1 i { color: var(--mint); }
 
-    .hero-desc {
-      font-size: 1rem;
-      color: var(--dim);
-      line-height: 1.8;
-      max-width: 400px;
-    }
+.hero-desc {
+  font-size: 1rem;
+  color: var(--dim);
+  line-height: 1.8;
+  max-width: 400px;
+  padding-bottom: 0.4rem;
+}
 
-    /* ── PORTFOLIO GRID ── */
-    .portfolio {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2.5rem 4rem;
-      animation: up 0.7s ease both 0.2s;
-    }
+.hero-scroll {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
 
-    /* ════════════════════════════════════════════
-       EINTRAG — so sieht ein Portfolio-Item aus:
+.hero-scroll::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--mint);
+}
 
-       TEXT-EINTRAG:
-         <div class="entry entry--text">
-           <div class="entry-meta">
-             <span class="entry-tag">Text</span>
-             <span class="entry-date">April 2026</span>
-           </div>
-           <div class="entry-content">
-             <h2 class="entry-title">Titel</h2>
-             <p class="entry-caption">Beschriftung / Zusammenfassung</p>
-             <div class="entry-body">
-               <p>Langer Text hier...</p>
-             </div>
-           </div>
-         </div>
+/* ── TOPICS ── */
+.topics {
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: up 0.7s ease both 0.2s;
+}
 
-       BILD-EINTRAG:
-         <div class="entry entry--image">
-           <div class="entry-meta">
-             <span class="entry-tag">Bild</span>
-             <span class="entry-date">April 2026</span>
-           </div>
-           <div class="entry-content">
-             <h2 class="entry-title">Titel</h2>
-             <p class="entry-caption">Bildbeschriftung</p>
-             <div class="entry-image-wrap">
-               <img src="dein-bild.jpg" alt="Bildbeschreibung" />
-             </div>
-           </div>
-         </div>
+.topic-panel { border-bottom: 1px solid var(--rule); }
 
-       BILD + TEXT:
-         Kombiniere entry-image-wrap und entry-body in einem entry-content.
-    ════════════════════════════════════════════ */
+.topic-header {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.2rem 2.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
 
-    .entry {
-      display: grid;
-      grid-template-columns: 10rem 1fr;
-      gap: 2.5rem;
-      padding: 2.8rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
+.topic-header:hover { background: var(--mint2); }
 
-    .entry:first-child { border-top: 1px solid var(--rule); margin-top: 3rem; }
+.topic-index {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--mint);
+}
 
-    .entry-meta {
-      padding-top: 0.25em;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+.topic-name {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1;
+}
 
-    .entry-tag {
-      font-family: var(--mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--bg);
-      background: var(--mint);
-      padding: 0.2em 0.6em;
-      border-radius: 2px;
-      display: inline-block;
-      width: fit-content;
-    }
+.topic-toggle {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+  transition: color 0.2s;
+}
 
-    /* Tag-Varianten */
-    .entry-tag--text    { background: var(--ink); }
-    .entry-tag--bild    { background: var(--mint); }
-    .entry-tag--zitat   { background: #7a6e5f; }
-    .entry-tag--analyse { background: #5a7a6e; }
+.topic-panel.open .topic-toggle { color: var(--mint); }
 
-    .entry-date {
-      font-family: var(--mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      color: var(--dim);
-    }
+.topic-body {
+  display: none;
+  border-top: 1px solid var(--rule);
+}
 
-    .entry-n {
-      font-family: var(--mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      color: var(--rule);
-      margin-top: auto;
-    }
+.topic-panel.open .topic-body { display: block; }
 
-    .entry-title {
-      font-weight: 400;
-      font-size: 1.45rem;
-      line-height: 1.15;
-      margin-bottom: 0.5rem;
-    }
+/* intro */
+.topic-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 2.5rem 2.5rem 2rem;
+  border-bottom: 1px solid var(--rule);
+}
 
-    .entry-caption {
-      font-size: 0.88rem;
-      color: var(--dim);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-      font-style: italic;
-    }
+.topic-intro p { font-size: 0.95rem; color: var(--dim); line-height: 1.8; }
 
-    .entry-body p {
-      font-size: 0.97rem;
-      line-height: 1.8;
-      color: var(--ink);
-      margin-bottom: 0.9rem;
-      max-width: 64ch;
-    }
+.topic-quote {
+  border-left: 2px solid var(--mint);
+  padding-left: 1.4rem;
+}
 
-    .entry-body p:last-child { margin-bottom: 0; }
+.topic-quote blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  margin-bottom: 0.6rem;
+}
 
-    .entry-body blockquote {
-      border-left: 2px solid var(--mint);
-      padding-left: 1.2rem;
-      margin: 1.2rem 0;
-      font-style: italic;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: var(--ink);
-    }
+.topic-quote cite {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-style: normal;
+}
 
-    /* Bild */
-    .entry-image-wrap {
-      margin-bottom: 0.8rem;
-      border: 1px solid var(--rule);
-      overflow: hidden;
-    }
+/* panel sections */
+.panel-section { padding: 0 2.5rem 2rem; }
 
-    .entry-image-wrap img {
-      width: 100%;
-      display: block;
-      transition: transform 0.4s ease;
-    }
+.panel-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 1.8rem 0 1rem;
+  border-bottom: 1px solid var(--rule);
+}
 
-    .entry-image-wrap:hover img { transform: scale(1.02); }
+/* text rows */
+.text-row {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+  transition: color 0.2s;
+}
 
-    /* Bild-Placeholder wenn noch kein Bild vorhanden */
-    .entry-image-placeholder {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: var(--mint2);
-      border: 1px dashed var(--rule);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.8rem;
-    }
+.text-row:last-of-type { border-bottom: none; }
+.text-row:hover { color: var(--mint); }
+.text-row:hover .row-tag { color: var(--mint); }
 
-    .entry-image-placeholder span {
-      font-family: var(--mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--dim);
-    }
+.row-n {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--dim);
+  padding-top: 0.15em;
+}
 
-    /* ── FOOTER ── */
-    footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 2.5rem;
-      border-top: 1px solid var(--rule);
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 2rem;
-    }
+.row-title { font-size: 1.05rem; }
 
-    .footer-names { font-style: italic; font-size: 1rem; color: var(--dim); }
+.row-sub {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--dim);
+  margin-top: 0.1rem;
+}
 
-    .footer-meta {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--dim);
-      text-align: right;
-      line-height: 2;
-    }
+.row-tag {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  transition: color 0.2s;
+}
 
-    @keyframes up {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+/* media grid — auto-fills columns, works for any count */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  margin-top: 1.5rem;
+}
 
-    @media (max-width: 700px) {
-      nav { padding: 0 1.5rem; }
-      .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 2rem; }
-      .portfolio { padding: 0 1.5rem 3rem; }
-      .entry { grid-template-columns: 1fr; gap: 0.8rem; }
-      .entry-meta { flex-direction: row; align-items: center; flex-wrap: wrap; }
-      .entry-n { display: none; }
-      footer { flex-direction: column; gap: 1rem; }
-      .footer-meta { text-align: left; }
-    }
-  </style>
+.media-cell {
+  background: var(--bg);
+  aspect-ratio: 16/10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.media-cell:hover { background: var(--mint2); }
+
+/* video cell is always wider */
+.media-cell.video {
+  grid-column: span 2;
+  aspect-ratio: 16/7;
+}
+
+.media-cell svg { opacity: 0.3; }
+
+.media-cell span {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* ── FOOTER ── */
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-names {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--dim);
+}
+
+.footer-meta {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-align: right;
+  line-height: 2;
+}
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  nav { padding: 0 1.5rem; }
+  .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 2rem; }
+  .topic-header { padding: 1.8rem 1.5rem; }
+  .topic-intro { grid-template-columns: 1fr; padding: 1.5rem; }
+  .panel-section { padding: 0 1.5rem 1.5rem; }
+  .media-cell.video { grid-column: span 1; }
+  footer { flex-direction: column; gap: 1rem; }
+  .footer-meta { text-align: left; }
+}
+
+
+</style>
 </head>
-<body>
-
-<!-- ══ NAV ══════════════════════════════════════════════════════════ -->
-<nav>
+<body><!-- ══ NAV ══════════════════════════════════════════════════════════ --><nav>
   <span class="nav-brand" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/index.html', '_self')">Staat &amp; <em>Freiheit</em></span>
-  <a class="nav-back" href="index.html">← Zurück zur Übersicht</a>
-</nav>
-
-<!-- ══ HERO ═════════════════════════════════════════════════════════ -->
-<div class="hero">
+</nav><!-- ══ HERO ═════════════════════════════════════════════════════════ --><div class="hero">
   <div>
-    <p class="hero-tag">Portfolio · Philosophie EF</p>
-    <h1>Unser<br><i>Portfolio</i></h1>
+    <p class="hero-tag">Philosophieprojekt · EF</p><!-- ← update Kurs here -->
+    <h1>Infos<br>und <i>all das!</i></h1>
   </div>
   <div>
-    <p class="hero-desc">
-      Gesammelte Texte, Bilder und Analysen aus unserem Sprint zu
-      Staat und Freiheit einfach aufgelistet.
-    </p>
+    <p class="hero-desc">Hier finden sie alles wichtige an Infos zu der Seite und zur benennung mit vergleich zum <a href="portfolio.html"><u>Portfolio</u></a>
+   </p>
   </div>
-</div>
-
-<!-- ══ PORTFOLIO ═════════════════════════════════════════════════════
-  Kopiere einen der Blöcke unten und füge ihn ein um einen neuen
-  Eintrag hinzuzufügen. Ändere den Tag-Typ (entry-tag--text /
-  entry-tag--bild / entry-tag--zitat / entry-tag--analyse) passend.
-════════════════════════════════════════════════════════════════════ -->
- <div class="topic-header">
+</div><!-- ══ TOPICS ════════════════════════════════════════════════════════
+  To add/remove texts:  copy or delete a .text-row block
+  To add/remove media:  copy or delete a .media-cell block
+     - use class="media-cell video" for videos (spans 2 columns)
+     - use class="media-cell"       for images (1 column)
+  To add a topic:       copy an entire .topic-panel block
+════════════════════════════════════════════════════════════════════ --><div class="topics"><!-- TOPIC 1 --><div class="topic-panel" id="t1">
+    <div class="topic-header">
       <span class="topic-index"></span>
       <span class="topic-name">Anarchismus</span>
       <span class="topic-toggle">Öffnen ↓</span>
@@ -349,36 +371,6 @@
 					<cite>Peter Kropotkin · Gegenseitige Hilfe in der Tier- und Menschenwelt (1902)</cite>
         </div>
       </div>
-      <div class="panel-section">
-
-    <p class="panel-label">Texte</p>
-    <div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/kropotkin.html', '_blank')">
-      <span class="row-n">01</span>
-      <div>
-        <div class="row-title">Kropotkin zum Anarchismus</div>
-        <div class="row-sub">Eine Zusammenfassung von "Pjotr Kropotkin:  Anarchismus"</div>
-      </div>
-      <span class="row-tag">Zusammenfassung</span>
-    </div>
-    <div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/hoffe.html', '_blank')">
-      <span class="row-n">02</span>
-      <div>
-        <div class="row-title">Höffes Kritik</div>
-        <div class="row-sub">Eine verständliche Kurzfassung von "Otfried Höffe: Die Utopie des Anarchismus"</div>
-      </div>
-      <span class="row-tag">Kurzfassung</span>
-    </div>
-    <div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/KvsH.html', '_blank')">
-      <span class="row-n">03</span>
-      <div>
-        <div class="row-title">Kropotkin VS. Höffe</div>
-        <div class="row-sub">Eine erfundene Diskussion zwischen Kropotkin und Höffe</div>
-      </div>
-      <span class="row-tag">Diskussion</span>
-    </div>
-
-
-  </div>
 </div>
 
 
@@ -400,28 +392,6 @@
 					 <cite>Isaiah Berlin · Zwei Konzepte der Freiheit (1958)</cite>
         </div>
       </div>
-      <div class="panel-section">
-
-    <p class="panel-label">Texte</p>
-    <div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/unterschiedFreiheit.html', '_blank')">
-      <span class="row-n">01</span>
-      <div>
-        <div class="row-title">Der Unterschied zwischen negativer und positiver Freiheit</div>
-        <div class="row-sub">Eine mit Beispielen versehene Erklärung zur positiven und negativen Freiheit</div>
-      </div>
-      <span class="row-tag">Erklärung</span>
-    </div>
-    <div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/freiheitEinschranken.html', '_blank')">
-      <span class="row-n">02</span>
-      <div>
-        <div class="row-title">Wann darf der Staat Freiheiten einschränken?</div>
-        <div class="row-sub">Eine verständliche Antwort zur gestellten Frage</div>
-      </div>
-      <span class="row-tag">Antwort</span>
-    </div>
-
-
-  </div>
 </div>
 
 
@@ -443,184 +413,37 @@
 					 <cite>Gustav Radbruch · Gesetzliches Unrecht und übergesetzliches Recht (1946)</cite>
         </div>
       </div>
-      <div class="panel-section">
-
-    <p class="panel-label">Texte</p>
-    <div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/zwangordnung.html', '_blank')">
-      <span class="row-n">01</span>
-      <div>
-        <div class="row-title">Der Staat als Zwangordnung</div>
-        <div class="row-sub">Eine verständliche Kurzfassung von "Hans Kelsen: Das Recht als Zwangordnung"</div>
-      </div>
-      <span class="row-tag">Kurzfassung</span>
-    </div>
-    <div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/weisseRose.html', '_blank')">
-      <span class="row-n">02</span>
-      <div>
-        <div class="row-title">Die Weiße Rose</div>
-        <div class="row-sub">Eine Beurteilung der taten der 'Weißen Rose'</div>
-      </div>
-      <span class="row-tag">Beurteilung</span>
-    </div>
-    <div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/wannWiderstand.html', '_blank')">
-      <span class="row-n">03</span>
-      <div>
-        <div class="row-title">Wann ist "gesetzliches Unrecht" Widerstand wert?</div>
-        <div class="row-sub">Eine Antwort zur oben gestellten Frage</div>
-      </div>
-      <span class="row-tag">Antwort</span>
-    </div>
-	<div class="text-row" onclick="window.open('https://melonenkaspar.github.io/TamtamsPhilosophie/ungehorsam.html', '_blank')">
-      <span class="row-n">04</span>
-      <div>
-        <div class="row-title">Was ist ziviler Ungehorsam?</div>
-        <div class="row-sub">Eine erklärung der Begriffe "Ziviler ungehorsam" und "Revolution"</div>
-      </div>
-      <span class="row-tag">Gegenüberstellung</span>
-    </div>	  
-
-   
-
-  </div>
 </div>
 
 
-</div></div>
-
-  
-<div class="portfolio">
-
-  <!-- ─ BEISPIEL: TEXT-EINTRAG ──────────────────────────────────── -->
-  <div class="entry entry--text">
-    <div class="entry-meta">
-      <span class="entry-tag entry-tag--text"> I1.1</span>
-      <span class="entry-date"></span>
-      <span class="entry-n">A3</span>
-    </div>
-    <div class="entry-content">
-      <h2 class="entry-title">Kropotkin – Zusammenfassung</h2>
-      <p class="entry-caption">Eigene Zusammenfassung des Primärtextes, Lehrbuch S. 96–97</p>
-      <div class="entry-body">
-        <p>
-          Kropotkin argumentiert gegen die hobbesianische Vorstellung, dass der
-          Naturzustand des Menschen ein Krieg aller gegen alle sei. Anhand
-          biologischer und historischer Belege zeigt er, dass gegenseitige Hilfe
-          und Kooperation ebenso fundamentale Triebkräfte der Evolution sind wie
-          Konkurrenz und Kampf.
-        </p>
-        <p>
-          Daraus folgt für Kropotkin: Ein Staat, der Menschen durch Zwang zur
-          Ordnung bringt, ist nicht notwendig – freiwillige Kooperation reicht aus.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─ BEISPIEL: BILD-EINTRAG ──────────────────────────────────── -->
-  <div class="entry entry--image">
-    <div class="entry-meta">
-      <span class="entry-tag entry-tag--bild">Bild</span>
-      <span class="entry-date">April 2026</span>
-      <span class="entry-n">002</span>
-    </div>
-    <div class="entry-content">
-      <h2 class="entry-title">Karikatur – Anarchist trifft Staatsphilosoph</h2>
-      <p class="entry-caption">Eigene Zeichnung zum Thema Anarchismus, Kreativaufgabe K1.1</p>
-      <!-- Bild vorhanden: <img src="..." alt="..."> statt Placeholder einsetzen -->
-      <div class="entry-image-placeholder">
-        <span>Bild hier einfügen · src="dateiname.jpg"</span>
-      </div>
-      <div class="entry-body">
-        <p>
-          Die Karikatur zeigt den Konflikt zwischen Kropotkins Vision einer
-          staatslosen Gesellschaft und Höffes Argument, dass ohne Recht
-          keine Freiheit gesichert werden kann.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─ BEISPIEL: ZITAT-EINTRAG ─────────────────────────────────── -->
-  <div class="entry entry--zitat">
-    <div class="entry-meta">
-      <span class="entry-tag entry-tag--zitat">Zitat</span>
-      <span class="entry-date">April 2026</span>
-      <span class="entry-n">003</span>
-    </div>
-    <div class="entry-content">
-      <h2 class="entry-title">Berlin zur negativen Freiheit</h2>
-      <p class="entry-caption">Isaiah Berlin, Zwei Konzepte der Freiheit (1958)</p>
-      <div class="entry-body">
-        <blockquote>
-          „Freiheit bedeutet, von anderen Menschen nicht daran gehindert zu werden,
-          so zu handeln, wie man möchte."
-        </blockquote>
-        <p>
-          Berlin unterscheidet hier die negative Freiheit (Freiheit von Hindernissen)
-          von der positiven Freiheit (Freiheit zur Selbstverwirklichung). Beide
-          Konzepte stehen in einem grundlegenden Spannungsverhältnis.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─ BEISPIEL: ANALYSE-EINTRAG ───────────────────────────────── -->
-  <div class="entry entry--analyse">
-    <div class="entry-meta">
-      <span class="entry-tag entry-tag--analyse">Analyse</span>
-      <span class="entry-date">April 2026</span>
-      <span class="entry-n">004</span>
-    </div>
-    <div class="entry-content">
-      <h2 class="entry-title">Vergleich: Kelsen und Radbruch</h2>
-      <p class="entry-caption">Eigene Analyse zum Thema Zwang und Widerstand</p>
-      <div class="entry-body">
-        <p>
-          Kelsen und Radbruch stehen für zwei entgegengesetzte Positionen:
-          Kelsens Rechtspositivismus trennt Recht strikt von Moral – ein Gesetz
-          ist gültig, weil es gesetzt wurde, nicht weil es gerecht ist.
-        </p>
-        <p>
-          Radbruch hingegen zieht eine Grenze: Wenn positives Recht in extremem
-          Maß gegen Gerechtigkeit verstößt, verliert es seinen Rechtscharakter.
-          Die Radbruch-Formel wurde zur Grundlage der juristischen Aufarbeitung
-          von NS-Verbrechen.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─ NEUER EINTRAG — hier kopieren und einfügen ──────────────── -->
-  <!--
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="entry-tag entry-tag--text">Text</span>
-      <span class="entry-date">Datum</span>
-      <span class="entry-n">005</span>
-    </div>
-    <div class="entry-content">
-      <h2 class="entry-title">Titel</h2>
-      <p class="entry-caption">Kurze Beschriftung</p>
-      <div class="entry-body">
-        <p>Dein Text hier.</p>
-      </div>
-    </div>
-  </div>
-  -->
-
-</div>
-
-<!-- ══ FOOTER ════════════════════════════════════════════════════════ -->
-<footer>
+</div></div><!-- ══ FOOTER ════════════════════════════════════════════════════════
+  Add or remove names by editing the comma-separated list below.
+════════════════════════════════════════════════════════════════════ --><footer>
   <span class="footer-names">
-    Lars R., Milo, Shabnam, Zehra, Lennard —
-    Erstellt als kreatives Produkt für unsere Scrum-Arbeit.
+    Lars R., Milo, Shabnam, Zehra, Lennard
+    Erstellt als Kreatives produkt für unsere scrum Arbeiten.
   </span>
   <div class="footer-meta">
     Philosophie · EF<br>
     Inda-Gymnasium · 2026
   </div>
-</footer>
+  <a href="oldIndex.html">Altes design</a></footer><script>
+  document.querySelectorAll('.topic-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const panel = header.closest('.topic-panel');
+      const isOpen = panel.classList.contains('open');
 
-</body>
+      document.querySelectorAll('.topic-panel').forEach(p => {
+        p.classList.remove('open');
+        p.querySelector('.topic-toggle').textContent = 'Öffnen ↓';
+      });
+
+      if (!isOpen) {
+        panel.classList.add('open');
+        header.querySelector('.topic-toggle').textContent = 'Schließen ↑';
+        setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 10);
+      }
+    });
+  });
+</script></body>
 </html>
