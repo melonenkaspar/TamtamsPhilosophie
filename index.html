@@ -404,29 +404,37 @@ footer {
     </div>
 
     <p class="panel-label">Medien</p>
-    <div class="media-grid">
-      <div class="media-cell video">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
-          <circle cx="15" cy="15" r="12"/>
-          <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
-        </svg>
-		  
-        <span>meme?</span>
-      </div>
-      <div class="media-cell">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <audio controls style="width:100%; margin-top:1rem; accent-color:var(--mint);">
+    Die Datei ist nicht direkt als Upload vorhanden, aber ich habe den vollständigen Code aus dem Dokument. Hier ist der exakte Patch, den du einfügen musst:
+Ersetze den kompletten <div class="media-grid"> Block im Anarchismus-Topic durch folgendes:
+html<div class="media-grid">
+  <div class="media-cell video">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#3d9b87" stroke-width="1.4">
+      <circle cx="15" cy="15" r="12"/>
+      <polygon points="12,10 22,15 12,20" fill="#3d9b87" stroke="none"/>
+    </svg>
+    <span>meme?</span>
+  </div>
+  <div class="media-cell">
+    <audio controls style="width:100%; margin-top:1rem; accent-color:var(--mint);">
       <source src="RecordingTest.mp3" type="audio/mpeg">
-      </div>
-      <div class="media-cell">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Meme2</span>
-      </div>
-      <div class="media-cell">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Meme3</span>
-      </div>
-    </div>
+    </audio>
+  </div>
+  <div class="media-cell">
+    <img src="images/AnarchismusMemeBrain.JPG" alt="Anarchismus Meme – Brain" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div class="media-cell">
+    <img src="images/AnarchismusMemeGru.JPG" alt="Anarchismus Meme – Gru" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div class="media-cell">
+    <img src="images/AnarchismusMemeGuy.JPG" alt="Anarchismus Meme – Guy" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div class="media-cell">
+    <img src="images/AnarchismusMemeTrade.JPG" alt="Anarchismus Meme – Trade" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div class="media-cell">
+    <img src="images/AnarchismusMemeUno.JPG" alt="Anarchismus Meme – Uno" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+</div>
 
   </div>
 </div>
